@@ -34,9 +34,9 @@ let request = pokemons.map((url) => {
 
 Promise.all(request).then((res) =>
   res.map((pokemon) => {
-    mainContainer.innerHTML += `<div class="card">
+    mainContainer.innerHTML += `<div class="card ${pokemon.types[0].type.name}">
     <img src=${pokemon.sprites.front_default} alt="" />
-    <span>${pokemon.id}</span>
+    <span>#${pokemon.id}</span>
     <h1>${pokemon.name}</h1>
     <p>Type: ${pokemon.types[0].type.name}</p>
   </div>`;
